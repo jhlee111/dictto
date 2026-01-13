@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictto User Guide</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1d1d1f;
+            --secondary-color: #86868b;
+            --accent-color: #007aff;
+            --border-color: #d2d2d7;
+            --code-bg: #f5f5f7;
+            --table-header-bg: #f5f5f7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1d1d1f;
+                --text-color: #f5f5f7;
+                --secondary-color: #86868b;
+                --accent-color: #0a84ff;
+                --border-color: #424245;
+                --code-bg: #2d2d2d;
+                --table-header-bg: #2d2d2d;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin-top: 2em;
+            margin-bottom: 0.75em;
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.25em;
+            font-weight: 600;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 1.5em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        code {
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 0.9em;
+            background-color: var(--code-bg);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 1em;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            font-weight: 600;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 1em 0;
+        }
+
+        .screenshot {
+            text-align: center;
+            margin: 2em 0;
+        }
+
+        .screenshot img {
+            max-width: 400px;
+        }
+
+        .screenshot-caption {
+            font-size: 0.9em;
+            color: var(--secondary-color);
+            margin-top: 0.5em;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--accent-color);
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background-color: var(--code-bg);
+            border-radius: 0 8px 8px 0;
+        }
+
+        blockquote p {
+            margin: 0;
+        }
+
+        .note {
+            background-color: rgba(0, 122, 255, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1em;
+            border-radius: 0 8px 8px 0;
+            margin: 1em 0;
+        }
+
+        .tip {
+            background-color: rgba(52, 199, 89, 0.1);
+            border-left: 4px solid #34c759;
+            padding: 1em;
+            border-radius: 0 8px 8px 0;
+            margin: 1em 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 2em 0;
+        }
+
+        kbd {
+            display: inline-block;
+            padding: 0.2em 0.5em;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.85em;
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .version {
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 0.9em;
+            margin-top: 3em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dictto User Guide</h1>
+
+    <h2>What is Dictto?</h2>
+    <p>Dictto is a macOS menu bar application for voice-to-text transcription. It uses WhisperKit to run OpenAI's Whisper speech recognition models directly on your Mac — completely offline, with no data sent to the cloud.</p>
+
+    <p><strong>Key Features:</strong></p>
+    <ul>
+        <li>100% on-device processing — your voice never leaves your Mac</li>
+        <li>Works offline — no internet required after model download</li>
+        <li>Global keyboard shortcut — record from any app</li>
+        <li>Auto-paste — transcribed text goes directly into your active text field</li>
+        <li>Multiple languages — supports English, Korean, Japanese, Chinese, and more</li>
+        <li>Real-time streaming — see transcription as you speak</li>
+    </ul>
+
+    <div class="note">
+        <strong>Note:</strong> This guide shows default keyboard shortcuts. You can customize all shortcuts in Settings → General.
+    </div>
+
+    <hr>
+
+    <h2>Quick Start</h2>
+
+    <h3>1. Grant Permissions</h3>
+    <p>On first launch, Dictto needs two permissions:</p>
+
+    <table>
+        <tr>
+            <th>Permission</th>
+            <th>Required?</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td><strong>Microphone</strong></td>
+            <td>Yes</td>
+            <td>Record your voice</td>
+        </tr>
+        <tr>
+            <td><strong>Accessibility</strong></td>
+            <td>Optional</td>
+            <td>Auto-paste into text fields</td>
+        </tr>
+    </table>
+
+    <p><strong>How to grant:</strong></p>
+    <ul>
+        <li><strong>Microphone:</strong> Click "OK" when macOS prompts, or go to System Settings → Privacy & Security → Microphone → Enable Dictto</li>
+        <li><strong>Accessibility:</strong> System Settings → Privacy & Security → Accessibility → Add Dictto (click + button)</li>
+    </ul>
+
+    <div class="screenshot">
+        <img src="images/settings-permissions.png" alt="Permissions Settings">
+        <div class="screenshot-caption">Settings → Permissions tab</div>
+    </div>
+
+    <h3>2. Your First Recording</h3>
+    <ol>
+        <li>Click the Dictto icon in your menu bar (microphone icon, top-right near the clock)</li>
+        <li>Click <strong>Record</strong> (or press your shortcut, default: <kbd>⇧</kbd><kbd>⌥</kbd><kbd>D</kbd>)</li>
+        <li>Speak clearly into your microphone</li>
+        <li>Click <strong>Stop</strong> (or press the same shortcut again)</li>
+        <li>Wait for transcription — text appears on your clipboard (and auto-pastes if Accessibility is enabled)</li>
+    </ol>
+
+    <p><strong>What you'll see:</strong></p>
+    <ul>
+        <li>A small overlay appears on screen showing recording status and duration</li>
+        <li>The menu bar icon changes to indicate recording state</li>
+        <li>When transcription completes, you'll hear a sound notification</li>
+    </ul>
+
+    <div class="screenshot">
+        <img src="images/overlay-recording.png" alt="Recording Overlay">
+        <div class="screenshot-caption">Recording overlay with timer and waveform</div>
+    </div>
+
+    <hr>
+
+    <h2>Menu Bar Interface</h2>
+    <p>Click the Dictto icon in your menu bar to open the dropdown:</p>
+
+    <div class="screenshot">
+        <img src="images/menu-idle.png" alt="Menu Bar Idle">
+        <div class="screenshot-caption">Menu bar dropdown (idle state)</div>
+    </div>
+
+    <div class="screenshot">
+        <img src="images/menu-recording.png" alt="Menu Bar Recording">
+        <div class="screenshot-caption">Menu bar while recording</div>
+    </div>
+
+    <h3>Record Button States</h3>
+    <ul>
+        <li><strong>Record</strong> — Ready to record</li>
+        <li><strong>Stop</strong> + timer — Currently recording (click to stop)</li>
+        <li><strong>Loading...</strong> — Model is loading</li>
+        <li><strong>Processing...</strong> — Transcription in progress</li>
+    </ul>
+
+    <h3>Quick Settings</h3>
+    <p>These let you quickly change settings without opening the full Settings window:</p>
+    <ul>
+        <li><strong>Model:</strong> Choose transcription model (Turbo recommended)</li>
+        <li><strong>Language:</strong> Set input language (Auto or specific language)</li>
+        <li><strong>Mode:</strong> Standard (record then transcribe) or Streaming (real-time)</li>
+    </ul>
+
+    <hr>
+
+    <h2>Recording Modes</h2>
+
+    <h3>Standard Mode</h3>
+    <p>Records complete audio first, then transcribes all at once.</p>
+    <p><strong>Best for:</strong> Longer recordings, maximum accuracy, noisy environments</p>
+
+    <h3>Streaming Mode</h3>
+    <p>Transcribes in real-time as you speak — text appears immediately.</p>
+    <p><strong>Best for:</strong> Quick notes, live dictation, immediate feedback</p>
+
+    <div class="tip">
+        <strong>Tip:</strong> Standard mode is more accurate because it has full audio context. Use Streaming when speed matters more than perfect accuracy.
+    </div>
+
+    <hr>
+
+    <h2>Model Selection</h2>
+    <p>Different models offer trade-offs between speed and accuracy:</p>
+
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Size</th>
+            <th>Speed</th>
+            <th>Accuracy</th>
+        </tr>
+        <tr>
+            <td>Tiny</td>
+            <td>~75 MB</td>
+            <td>Fastest</td>
+            <td>Basic</td>
+        </tr>
+        <tr>
+            <td>Base</td>
+            <td>~150 MB</td>
+            <td>Fast</td>
+            <td>Good</td>
+        </tr>
+        <tr>
+            <td>Small</td>
+            <td>~500 MB</td>
+            <td>Medium</td>
+            <td>Better</td>
+        </tr>
+        <tr>
+            <td><strong>Turbo</strong></td>
+            <td>~954 MB</td>
+            <td>Fast</td>
+            <td>Excellent</td>
+        </tr>
+        <tr>
+            <td>Large v3</td>
+            <td>~950 MB</td>
+            <td>Slower</td>
+            <td>Best</td>
+        </tr>
+    </table>
+
+    <p><strong>Recommendation:</strong> Use <strong>Turbo</strong> (default) — best balance of speed and accuracy.</p>
+    <p><strong>English-only users:</strong> Try Tiny.en, Base.en, or Small.en for faster results.</p>
+
+    <div class="screenshot">
+        <img src="images/settings-model.png" alt="Model Settings">
+        <div class="screenshot-caption">Settings → Model tab</div>
+    </div>
+
+    <hr>
+
+    <h2>Keyboard Shortcuts</h2>
+
+    <div class="note">
+        <strong>All shortcuts are customizable</strong> in Settings → General
+    </div>
+
+    <h3>Default Shortcuts</h3>
+    <table>
+        <tr>
+            <th>Action</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Start/Stop Recording</td>
+            <td><kbd>⇧</kbd><kbd>⌥</kbd><kbd>D</kbd></td>
+            <td>Toggle recording on/off</td>
+        </tr>
+        <tr>
+            <td>Cancel Recording</td>
+            <td><kbd>Escape</kbd></td>
+            <td>Stop without transcribing</td>
+        </tr>
+        <tr>
+            <td>Open Settings</td>
+            <td><kbd>⌘</kbd><kbd>,</kbd></td>
+            <td>Open settings window</td>
+        </tr>
+        <tr>
+            <td>Quit</td>
+            <td><kbd>⌘</kbd><kbd>Q</kbd></td>
+            <td>Exit Dictto</td>
+        </tr>
+    </table>
+
+    <div class="screenshot">
+        <img src="images/settings-general.png" alt="General Settings">
+        <div class="screenshot-caption">Settings → General tab (customize shortcuts here)</div>
+    </div>
+
+    <h3>Customizing Shortcuts</h3>
+    <ol>
+        <li>Open Settings → General</li>
+        <li>Click the shortcut recorder box</li>
+        <li>Press your desired key combination</li>
+        <li>New shortcut is saved automatically</li>
+    </ol>
+
+    <hr>
+
+    <h2>Troubleshooting</h2>
+
+    <h3>Recording doesn't start</h3>
+    <ol>
+        <li>Check microphone permission: System Settings → Privacy & Security → Microphone</li>
+        <li>Make sure Dictto is enabled</li>
+        <li>Restart Dictto</li>
+    </ol>
+
+    <h3>Shortcut doesn't work</h3>
+    <ol>
+        <li>Check Accessibility permission: System Settings → Privacy & Security → Accessibility</li>
+        <li>Make sure Dictto is in the list and enabled</li>
+        <li>Try a different shortcut (might conflict with another app)</li>
+        <li>Restart Dictto</li>
+    </ol>
+
+    <h3>Text doesn't auto-paste</h3>
+    <ol>
+        <li>Grant Accessibility permission (required for auto-paste)</li>
+        <li>Make sure a text field is focused when recording stops</li>
+        <li>Use <kbd>⌘</kbd><kbd>V</kbd> to paste manually — text is always on clipboard</li>
+    </ol>
+
+    <h3>Transcription is inaccurate</h3>
+    <ul>
+        <li>Use a larger model (Turbo or Large v3)</li>
+        <li>Set language explicitly instead of Auto</li>
+        <li>Speak clearly at normal pace</li>
+        <li>Reduce background noise</li>
+        <li>Use Standard mode instead of Streaming</li>
+    </ul>
+
+    <hr>
+
+    <h2>Tips for Better Results</h2>
+
+    <p><strong>Speaking:</strong></p>
+    <ul>
+        <li>Speak naturally at normal pace</li>
+        <li>Pause between sentences for better punctuation</li>
+        <li>Enunciate clearly for technical terms</li>
+    </ul>
+
+    <p><strong>Environment:</strong></p>
+    <ul>
+        <li>Use in a quiet space</li>
+        <li>Stay close to your microphone</li>
+        <li>Use Standard mode for important transcriptions</li>
+    </ul>
+
+    <hr>
+
+    <h2>Privacy & Data</h2>
+    <ul>
+        <li><strong>100% local processing</strong> — Audio never leaves your Mac</li>
+        <li><strong>No cloud services</strong> — Works completely offline after model download</li>
+        <li><strong>No analytics</strong> — Dictto doesn't track or collect any data</li>
+        <li><strong>Temporary audio</strong> — Recordings are deleted after transcription</li>
+    </ul>
+
+    <hr>
+
+    <p class="version">Dictto v0.2.0</p>
+</body>
+</html>
