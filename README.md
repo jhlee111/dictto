@@ -92,13 +92,13 @@ With Dictto, your words become text instantly. Send prompts while still talking.
 
 ## Documentation
 
-See the [User Guide](docs/help.html) for detailed documentation.
+See the [User Guide](docs/USER_GUIDE.md) for detailed documentation.
 
 ## Support
 
 If you encounter any issues:
 
-1. Check the [User Guide](docs/help.html) for troubleshooting
+1. Check the [User Guide](docs/USER_GUIDE.md) for troubleshooting
 2. Open an [Issue](https://github.com/jhlee111/dictto/issues) with your system info
 
 ## License
