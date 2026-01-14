@@ -1,6 +1,6 @@
 # Dictto
 
-**Voice to text transcription for macOS. 100% local, powered by Whisper.**
+**Real-time voice-to-text that runs entirely on your Mac.**
 
 [![Dictto Demo Video](https://img.youtube.com/vi/QOF2-9m8YNU/maxresdefault.jpg)](https://youtu.be/QOF2-9m8YNU)
 
@@ -10,16 +10,32 @@
   </a>
 </p>
 
-Dictto is a macOS menu bar application that transcribes your voice to text using OpenAI's Whisper models. Everything runs locally on your Mac — no internet required, no data sent to the cloud.
+Most dictation apps make you choose: **fast** or **private**. Cloud-based transcription streams text as you speak, but your voice leaves your device. Local processing keeps everything private, but you wait until recording ends.
+
+**Dictto does both.** Text appears while you speak, and nothing ever leaves your Mac.
+
+## Why Dictto?
+
+### For Developers & AI Users
+
+If you're working with Claude Code, Cursor, or any LLM — speaking your prompts is faster than typing. But waiting for transcription breaks your flow.
+
+With Dictto, your words become text instantly. Send prompts while still talking. Your instructions don't need perfect grammar — LLMs understand context. What matters is **speed**, **accuracy**, and **privacy**.
+
+### Real-time Streaming + Local = No Compromise
+
+- **See words as you speak** — Not after you stop
+- **100% on-device** — Voice never touches the cloud
+- **Powered by Whisper** — OpenAI's speech recognition, running locally via WhisperKit
+- **Works offline** — No internet required after initial model download
 
 ## Features
 
-- **100% Local Processing** — Your voice never leaves your Mac
-- **Works Offline** — No internet required after model download
-- **Global Keyboard Shortcut** — Record from any app with ⇧⌥D
-- **Auto-Paste** — Transcribed text goes directly into your active text field
-- **Multiple Languages** — English, Korean, Japanese, Chinese, and more
-- **Real-time Streaming** — See transcription as you speak
+- **Global Hotkey** — Press ⇧⌥D from any app to start/stop
+- **Auto-Paste** — Text goes directly where your cursor is
+- **Multilingual** — English, Korean, Japanese, Chinese, and 90+ languages
+- **Menu Bar App** — Stays out of your way until you need it
+- **Apple Silicon Optimized** — Runs efficiently on M1/M2/M3/M4
 
 ## Screenshots
 
@@ -50,14 +66,10 @@ Dictto is a macOS menu bar application that transcribes your voice to text using
 ## Quick Start
 
 1. Click the Dictto icon in your menu bar
-2. Click **Record** (or press **⇧⌥D**)
-3. Speak into your microphone
-4. Click **Stop** (or press **⇧⌥D** again)
-5. Your text is copied to clipboard!
-
-## Documentation
-
-See the [User Guide](docs/help.html) for detailed documentation.
+2. Press **⇧⌥D** (or click Record)
+3. Speak — watch text appear in real-time
+4. Press **⇧⌥D** again to stop
+5. Text is copied and pasted automatically
 
 ## Model Selection
 
@@ -76,7 +88,11 @@ See the [User Guide](docs/help.html) for detailed documentation.
 - All processing happens locally on your Mac
 - No data is sent to any server
 - No analytics or tracking
-- Audio recordings are deleted after transcription
+- Audio is deleted immediately after transcription
+
+## Documentation
+
+See the [User Guide](docs/help.html) for detailed documentation.
 
 ## Support
 
