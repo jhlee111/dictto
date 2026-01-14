@@ -2,14 +2,7 @@
 
 **Voice to text transcription for macOS. 100% local, powered by Whisper.**
 
-<p align="center">
-  <a href="https://youtu.be/QOF2-9m8YNU">
-    <img src="https://img.youtube.com/vi/QOF2-9m8YNU/maxresdefault.jpg" alt="Dictto Demo Video" width="700">
-  </a>
-</p>
-<p align="center">
-  <em>▶️ Click to watch demo video</em>
-</p>
+[![Dictto Demo Video](https://img.youtube.com/vi/QOF2-9m8YNU/maxresdefault.jpg)](https://youtu.be/QOF2-9m8YNU)
 
 Dictto is a macOS menu bar application that transcribes your voice to text using OpenAI's Whisper models. Everything runs locally on your Mac — no internet required, no data sent to the cloud.
 
