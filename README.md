@@ -4,6 +4,12 @@
 
 [![Dictto Demo Video](https://img.youtube.com/vi/QOF2-9m8YNU/maxresdefault.jpg)](https://youtu.be/QOF2-9m8YNU)
 
+<p align="center">
+  <a href="https://github.com/jhlee111/dictto/releases/latest">
+    <img src="https://img.shields.io/badge/Download-Dictto%20for%20Mac-blue?style=for-the-badge&logo=apple" alt="Download Dictto">
+  </a>
+</p>
+
 Dictto is a macOS menu bar application that transcribes your voice to text using OpenAI's Whisper models. Everything runs locally on your Mac — no internet required, no data sent to the cloud.
 
 ## Features
