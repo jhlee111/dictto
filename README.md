@@ -1,110 +1,104 @@
 # Dictto
 
-**Real-time voice-to-text that runs entirely on your Mac.**
-
-[![Dictto Demo Video](https://img.youtube.com/vi/QOF2-9m8YNU/maxresdefault.jpg)](https://youtu.be/QOF2-9m8YNU)
-
-<p align="center">
-  <a href="https://github.com/jhlee111/dictto/releases/latest">
-    <img src="https://img.shields.io/badge/Download-Dictto%20for%20Mac-blue?style=for-the-badge&logo=apple" alt="Download Dictto">
-  </a>
-</p>
-
-Most dictation apps make you choose: **fast** or **private**. Cloud-based transcription streams text as you speak, but your voice leaves your device. Local processing keeps everything private, but you wait until recording ends.
-
-**Dictto does both.** Text appears while you speak, and nothing ever leaves your Mac.
-
-## Why Dictto?
-
-### For Developers & AI Users
-
-If you're working with Claude Code, Cursor, or any LLM — speaking your prompts is faster than typing. But waiting for transcription breaks your flow.
-
-With Dictto, your words become text instantly. Send prompts while still talking. Your instructions don't need perfect grammar — LLMs understand context. What matters is **speed**, **accuracy**, and **privacy**.
-
-### Real-time Streaming + Local = No Compromise
-
-- **See words as you speak** — Not after you stop
-- **100% on-device** — Voice never touches the cloud
-- **Powered by Whisper** — OpenAI's speech recognition, running locally via whisper.cpp
-- **Works offline** — No internet required after initial model download
+Voice to text, locally - macOS menu bar app for voice dictation using local Whisper model.
 
 ## Features
 
-- **Global Hotkey** — Press ⇧⌥D from any app to start/stop
-- **Auto-Paste** — Text goes directly where your cursor is
-- **Multilingual** — English, Korean, Japanese, Chinese, and 90+ languages
-- **Menu Bar App** — Stays out of your way until you need it
-- **Apple Silicon Optimized** — Runs efficiently on M1/M2/M3/M4
-
-## Screenshots
-
-<p align="center">
-  <img src="docs/images/menu-idle.png" alt="Menu Bar" width="240">
-  <img src="docs/images/menu-recording.png" alt="Recording" width="240">
-</p>
-
-<p align="center">
-  <img src="docs/images/settings-general.png" alt="Settings - General" width="380">
-  <img src="docs/images/settings-model.png" alt="Settings - Model" width="380">
-</p>
+- **Local transcription** - Uses WhisperKit (CoreML) for on-device processing
+- **Menu bar app** - No dock icon, always accessible
+- **Global hotkey** - Default: `Shift+Option+D` to start/stop recording
+- **Multi-language support** - Korean, English, Japanese, Chinese, and more
+- **Direct text insertion** - Pastes transcription into active text field (with Accessibility permission)
+- **Clipboard fallback** - Always copies to clipboard
+- **Sound feedback** - Audio jingles for recording start/stop and transcription complete
 
 ## Requirements
 
 - macOS 14.0 (Sonoma) or later
-- Apple Silicon Mac (M1, M2, M3, M4)
-- ~1GB storage for AI models
+- Apple Silicon Mac (M1/M2/M3)
 
-## Installation
+## Model Loading Time
 
-1. Download the latest release from [Releases](https://github.com/jhlee111/dictto/releases)
-2. Open the DMG and drag Dictto to Applications
-3. Launch Dictto — it will appear in your menu bar
-4. Grant Microphone permission when prompted
-5. (Optional) Grant Accessibility permission for auto-paste
+| Model | Size | First Load Time | Note |
+|-------|------|-----------------|------|
+| Tiny | ~75 MB | ~5-10 sec | Fast, less accurate |
+| Base | ~150 MB | ~10-15 sec | Good balance for English |
+| Small | ~500 MB | ~20-30 sec | Better accuracy |
+| **Large v3 Turbo** | **~954 MB** | **~40 sec** | **Recommended** - Best accuracy |
+| Large v3 | ~950 MB | ~60 sec | Highest accuracy, slower |
 
-## Quick Start
+> **Note**: First load includes model download from HuggingFace + memory loading + Neural Engine optimization (prewarm). Subsequent app launches only require memory loading + prewarm (~30-40 sec for Large v3 Turbo).
 
-1. Click the Dictto icon in your menu bar
-2. Press **⇧⌥D** (or click Record)
-3. Speak — watch text appear in real-time
-4. Press **⇧⌥D** again to stop
-5. Text is copied and pasted automatically
+## Permissions
 
-## Model Selection
+| Permission | Required | Purpose |
+|------------|----------|---------|
+| Microphone | Yes | Record voice |
+| Accessibility | Optional | Insert text directly into active field |
 
-| Model | Size | Speed | Accuracy |
-|-------|------|-------|----------|
-| Tiny | ~75 MB | Fastest | Basic |
-| Base | ~150 MB | Fast | Good |
-| Small | ~500 MB | Medium | Better |
-| **Turbo** | ~954 MB | Fast | Excellent |
-| Large v3 | ~950 MB | Slower | Best |
+## Model Storage
 
-**Recommendation:** Use **Turbo** (default) for the best balance of speed and accuracy.
+Models are stored in `~/Library/Application Support/Dictto/Models/` (no permission dialogs).
 
-## Privacy
+## Build
 
-- All processing happens locally on your Mac
-- No data is sent to any server
-- No analytics or tracking
-- Audio is deleted immediately after transcription
+```bash
+# Build release
+xcodebuild -scheme Dictto -configuration Release -destination 'platform=macOS' -derivedDataPath ./build build
 
-## Documentation
+# Or use the build script
+./build-app.sh
 
-See the [User Guide](docs/USER_GUIDE.md) for detailed documentation.
+# App bundle will be in dist/Dictto.app
+```
 
-## Support
+## Usage
 
-If you encounter any issues:
+1. Launch the app (appears in menu bar)
+2. Wait for model to load (~40 sec for Large v3 Turbo)
+3. Press `Shift+Option+D` or click menu bar icon to start recording
+4. Speak
+5. Press `Shift+Option+D` again to stop and transcribe
+6. Text is automatically pasted (or copied to clipboard)
 
-1. Check the [User Guide](docs/USER_GUIDE.md) for troubleshooting
-2. Open an [Issue](https://github.com/jhlee111/dictto/issues) with your system info
+## Tips
 
-## License
+- **Short Korean phrases detected as English?** Select "한국어 (Korean)" in Settings → Model → Language instead of "Auto-detect"
+- **Faster startup?** Use a smaller model (Tiny or Base) for quicker loading
 
-Proprietary software. All rights reserved.
+## Testing
 
----
+### Unit Tests
 
-Made with ❤️ for macOS
+```bash
+swift test
+swift test --filter AppStateTests  # Run specific suite
+```
+
+### Integration Tests (TranscriptionService)
+
+Integration tests verify transcription quality using pre-downloaded models and TTS-generated audio fixtures.
+
+**Setup (one-time):**
+
+```bash
+# Install huggingface-cli
+pip install huggingface_hub
+
+# Download test model (~3GB)
+./scripts/download-test-models.sh
+```
+
+**Run tests:**
+
+```bash
+swift test --filter TranscriptionServiceIntegrationTests
+```
+
+**Test audio fixtures** are in `Dictto/Tests/Fixtures/`:
+- English: short (~5s), medium (~20s), long (~75s)
+- Korean: short (~3s), medium (~20s), long (~65s)
+
+## Version
+
+v0.1.0 - Initial development
