@@ -2,7 +2,7 @@
 
 ## What is Dictto?
 
-Dictto is a macOS menu bar application for voice-to-text transcription. It uses WhisperKit to run OpenAI's Whisper speech recognition models directly on your Mac — completely offline, with no data sent to the cloud.
+Dictto is a macOS menu bar application for voice-to-text transcription. It uses whisper.cpp to run OpenAI's Whisper speech recognition models directly on your Mac — completely offline, with no data sent to the cloud.
 
 **Key Features:**
 

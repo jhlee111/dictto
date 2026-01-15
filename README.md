@@ -26,7 +26,7 @@ With Dictto, your words become text instantly. Send prompts while still talking.
 
 - **See words as you speak** — Not after you stop
 - **100% on-device** — Voice never touches the cloud
-- **Powered by Whisper** — OpenAI's speech recognition, running locally via WhisperKit
+- **Powered by Whisper** — OpenAI's speech recognition, running locally via whisper.cpp
 - **Works offline** — No internet required after initial model download
 
 ## Features
