@@ -4,7 +4,7 @@ Voice to text, locally - macOS menu bar app for private, offline voice dictation
 
 ## Download
 
-**[Download Dictto-0.10.0.dmg](https://github.com/jhlee111/dictto/releases/latest)**
+**[Download Dictto-0.11.0.dmg](https://github.com/jhlee111/dictto/releases/latest)**
 
 ## Features
 
@@ -16,6 +16,7 @@ Voice to text, locally - macOS menu bar app for private, offline voice dictation
 - **Clipboard fallback** - Always copies to clipboard
 - **Sound feedback** - Audio jingles for recording start/stop
 - **Audio file import** - Import from Voice Memos or other audio files (m4a, wav, mp3, mp4)
+- **Speaker diarization** - Identify and label different speakers in audio files
 - **Share Extension** - Share audio from Voice Memos directly to Dictto
 - **Long file support** - Progress display for files over 30 seconds
 
@@ -26,7 +27,7 @@ Voice to text, locally - macOS menu bar app for private, offline voice dictation
 
 ## Installation
 
-1. Download `Dictto-0.10.0.dmg` from [Releases](https://github.com/jhlee111/dictto/releases/latest)
+1. Download `Dictto-0.11.0.dmg` from [Releases](https://github.com/jhlee111/dictto/releases/latest)
 2. Open the DMG and drag Dictto to Applications
 3. Launch Dictto from Applications
 4. Grant Microphone permission when prompted
@@ -46,9 +47,10 @@ Voice to text, locally - macOS menu bar app for private, offline voice dictation
 1. Click menu bar icon → "Import Audio File..."
 2. Select an audio file (m4a, wav, mp3, mp4)
 3. Choose transcription language (optional)
-4. Click "Transcribe"
-5. For long files (>30s), progress and partial results are shown in real-time
-6. Copy the result or let it auto-copy to clipboard
+4. Enable "Speaker Diarization" to identify different speakers (optional)
+5. Click "Transcribe"
+6. For long files (>30s), progress and partial results are shown in real-time
+7. Copy the result or let it auto-copy to clipboard
 
 ### Share from Voice Memos
 1. Open Voice Memos app
@@ -86,4 +88,4 @@ MIT License
 
 ## Version
 
-v0.10.0
+v0.11.0
