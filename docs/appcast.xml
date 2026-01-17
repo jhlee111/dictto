@@ -7,6 +7,27 @@
         <language>en</language>
 
         <item>
+            <title>Version 0.12.0</title>
+            <sparkle:version>0.12.0</sparkle:version>
+            <sparkle:shortVersionString>0.12.0</sparkle:shortVersionString>
+            <pubDate>Sat, 18 Jan 2026 04:20:00 +0900</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v0.12.0/Dictto-0.12.0.zip"
+                       sparkle:edSignature="DbCu13e5pLWXZJbtOIVKuLWhmtB2rswAS2bSyZqi6fwCZRSRATmLFcPE1c4gdLDujBm+RxDva7Y1DNv44pRDBw=="
+                       length="10410020"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What's New in 0.12.0</h2>
+                <ul>
+                    <li>Speaker identification with name assignment</li>
+                    <li>Diarization sensitivity adjustment</li>
+                    <li>Retry transcription without re-selecting file</li>
+                    <li>Automatic app updates via Sparkle</li>
+                </ul>
+            ]]></description>
+        </item>
+
+        <item>
             <title>Version 0.11.0</title>
             <sparkle:version>0.11.0</sparkle:version>
             <sparkle:shortVersionString>0.11.0</sparkle:shortVersionString>
