@@ -4,7 +4,7 @@ Voice to text, locally - macOS menu bar app for private, offline voice dictation
 
 ## Download
 
-**[Download Dictto-0.11.0.dmg](https://github.com/jhlee111/dictto/releases/latest)**
+**[Download Dictto-0.12.0.dmg](https://github.com/jhlee111/dictto/releases/latest)**
 
 ## Features
 
@@ -17,7 +17,9 @@ Voice to text, locally - macOS menu bar app for private, offline voice dictation
 - **Sound feedback** - Audio jingles for recording start/stop
 - **Audio file import** - Import from Voice Memos or other audio files (m4a, wav, mp3, mp4)
 - **Speaker diarization** - Identify and label different speakers in audio files
+- **Speaker identification** - Assign names to speakers during transcription review
 - **Share Extension** - Share audio from Voice Memos directly to Dictto
+- **Automatic updates** - Get notified of new versions with in-app updates
 - **Long file support** - Progress display for files over 30 seconds
 
 ## Requirements
@@ -27,7 +29,7 @@ Voice to text, locally - macOS menu bar app for private, offline voice dictation
 
 ## Installation
 
-1. Download `Dictto-0.11.0.dmg` from [Releases](https://github.com/jhlee111/dictto/releases/latest)
+1. Download `Dictto-0.12.0.dmg` from [Releases](https://github.com/jhlee111/dictto/releases/latest)
 2. Open the DMG and drag Dictto to Applications
 3. Launch Dictto from Applications
 4. Grant Microphone permission when prompted
@@ -98,4 +100,4 @@ MIT License
 
 ## Version
 
-v0.11.0
+v0.12.0
