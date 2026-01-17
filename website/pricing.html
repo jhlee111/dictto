@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Dictto</title>
+    <meta name="description" content="Dictto pricing. Free during beta.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .back-link {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #00d4ff;
+        }
+
+        main {
+            padding: 60px 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b68ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Beta Card */
+        .beta-card {
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 16px;
+            padding: 48px;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .beta-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b68ee 100%);
+            color: #000;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+
+        .beta-card h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .beta-card .price {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .beta-card .subtitle {
+            color: #a0a0a0;
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #0066ff 0%, #5500ff 100%);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.3);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 102, 255, 0.4);
+        }
+
+        /* Coming Soon */
+        .coming-soon {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .coming-soon h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #a0a0a0;
+        }
+
+        .coming-soon p {
+            color: #606060;
+            font-size: 15px;
+        }
+
+        /* Features Section */
+        .features-section h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #c0c0c0;
+            font-size: 15px;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            color: #00d4ff;
+            font-weight: 600;
+        }
+
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 0;
+            text-align: center;
+            color: #606060;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #808080;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #00d4ff;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+            .beta-card {
+                padding: 32px 24px;
+            }
+            .beta-card .price {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="back-link">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/>
+                </svg>
+                Back to Dictto
+            </a>
+        </header>
+
+        <main>
+            <h1>Pricing</h1>
+
+            <div class="beta-card">
+                <span class="beta-badge">BETA</span>
+                <h2>Free During Beta</h2>
+                <div class="price">$0</div>
+                <p class="subtitle">Full access to all features. No credit card required.</p>
+                <a href="https://github.com/jhlee111/dictto/releases/latest" class="cta-btn">Download Free Beta</a>
+            </div>
+
+            <div class="coming-soon">
+                <h3>Pricing Coming Soon</h3>
+                <p>We're still figuring out pricing. Beta users will be notified before any changes.</p>
+            </div>
+
+            <div class="features-section">
+                <h2>What's Included</h2>
+                <div class="feature-list">
+                    <div class="feature-item">Real-time streaming transcription</div>
+                    <div class="feature-item">All Whisper models (Tiny to Large)</div>
+                    <div class="feature-item">Global hotkey (⇧⌥D)</div>
+                    <div class="feature-item">Auto-paste to any app</div>
+                    <div class="feature-item">100+ languages supported</div>
+                    <div class="feature-item">Works offline</div>
+                    <div class="feature-item">100% local processing</div>
+                    <div class="feature-item">No account required</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>
+                <a href="/terms">Terms</a> &bull;
+                <a href="/privacy">Privacy</a> &bull;
+                <a href="/refund">Refunds</a> &bull;
+                <a href="https://github.com/jhlee111/dictto">GitHub</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
