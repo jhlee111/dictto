@@ -7,6 +7,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 0.12.2</title>
+            <sparkle:version>0.12.2</sparkle:version>
+            <sparkle:shortVersionString>0.12.2</sparkle:shortVersionString>
+            <pubDate>Sat, 17 Jan 2026 13:03:31 -0800</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v0.12.2/Dictto-0.12.2.zip"
+                       sparkle:edSignature="kkTu6FJ+zHFmQL+7oAZ01nol4u3SgXFYNv51xPmntcmtTfQZYKaFK2mtmeHcEbMMwefzMXpq7Bk6/Rn26pYzBA=="
+                       length="10411559"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 0.12.2</h2>
+                <ul>
+                    <li>Automatic update check on app startup</li><li>Menu bar button to check for updates</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
             <title>Version 0.12.1</title>
             <sparkle:version>0.12.1</sparkle:version>
             <sparkle:shortVersionString>0.12.1</sparkle:shortVersionString>
