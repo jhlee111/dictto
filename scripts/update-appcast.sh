@@ -47,8 +47,9 @@ PUB_DATE=$(date -R)
 # Download URL
 DOWNLOAD_URL="https://github.com/jhlee111/dictto/releases/download/v${VERSION}/Dictto-${VERSION}.zip"
 
-# Create new item XML
-NEW_ITEM=$(cat <<EOF
+# Create new item XML in a temp file (avoids quoting issues with awk -v)
+TEMP_ITEM=$(mktemp)
+cat > "$TEMP_ITEM" << ITEM_EOF
         <item>
             <title>Version ${VERSION}</title>
             <sparkle:version>${VERSION}</sparkle:version>
@@ -60,19 +61,19 @@ NEW_ITEM=$(cat <<EOF
                        type="application/octet-stream"/>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <description><![CDATA[
-                <h2>What's New in ${VERSION}</h2>
+                <h2>What&#39;s New in ${VERSION}</h2>
                 <ul>
                     <li>${RELEASE_NOTES}</li>
                 </ul>
             ]]></description>
         </item>
 
-EOF
-)
+ITEM_EOF
 
 # Check if appcast.xml exists
 if [ ! -f "$APPCAST_FILE" ]; then
     echo "Error: appcast.xml not found at $APPCAST_FILE"
+    rm -f "$TEMP_ITEM"
     exit 1
 fi
 
@@ -83,28 +84,30 @@ if grep -q "sparkle:version>${VERSION}</sparkle:version" "$APPCAST_FILE"; then
     echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
         echo "Aborted."
+        rm -f "$TEMP_ITEM"
         exit 1
     fi
     # Remove existing entry for this version
-    # This is a simple approach - removes from <item> to </item> for matching version
     sed -i.bak "/<item>/,/<\/item>/{ /<sparkle:version>${VERSION}<\/sparkle:version>/,/<\/item>/d; }" "$APPCAST_FILE"
 fi
 
 # Insert new item after <language>en</language>
-# Using awk for reliable multi-line insertion
-awk -v new_item="$NEW_ITEM" '
+# Using awk with getline to read from temp file (avoids quoting issues)
+awk -v itemfile="$TEMP_ITEM" '
     /<language>en<\/language>/ {
         print
         print ""
-        printf "%s", new_item
+        while ((getline line < itemfile) > 0) print line
+        close(itemfile)
         next
     }
     { print }
 ' "$APPCAST_FILE" > "$APPCAST_FILE.tmp"
 
 mv "$APPCAST_FILE.tmp" "$APPCAST_FILE"
+rm -f "$TEMP_ITEM"
 
-echo "✅ Updated appcast.xml with version ${VERSION}"
+echo "Updated appcast.xml with version ${VERSION}"
 echo ""
 echo "Changes:"
 echo "  - Version: ${VERSION}"
@@ -114,5 +117,5 @@ echo "  - URL: ${DOWNLOAD_URL}"
 echo ""
 echo "Next steps:"
 echo "  1. Review: cat $APPCAST_FILE"
-echo "  2. Commit: git add docs/appcast.xml && git commit -m 'chore: add v${VERSION} to appcast'"
+echo "  2. Commit: git add docs/appcast.xml && git commit -m \"chore: add v${VERSION} to appcast\""
 echo "  3. Push: git push"
