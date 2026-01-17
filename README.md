@@ -82,6 +82,16 @@ Voice to text, locally - macOS menu bar app for private, offline voice dictation
 - **Faster startup?** Use a smaller model (Tiny or Base) for quicker loading
 - **Long recordings?** Use "Import Audio..." for pre-recorded files with progress tracking
 
+## Website
+
+The `website/` directory contains the marketing website (dictto.com), deployed to Cloudflare Pages.
+
+```bash
+# Deploy website (requires wrangler CLI)
+./scripts/deploy-website.sh           # Production
+./scripts/deploy-website.sh --preview # Preview
+```
+
 ## License
 
 MIT License
