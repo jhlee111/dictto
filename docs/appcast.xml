@@ -7,6 +7,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 0.12.3</title>
+            <sparkle:version>0.12.3</sparkle:version>
+            <sparkle:shortVersionString>0.12.3</sparkle:shortVersionString>
+            <pubDate>Sun, 18 Jan 2026 14:56:43 -0800</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v0.12.3/Dictto-0.12.3.zip"
+                       sparkle:edSignature="ryG6VFSG+O1GX3OhHNPn8AFwYCSW84CSPIkC1YfOrA/Mw0VfSmidvtM2OfscNsnptGvjRtQTJVnE4Waq2pGyAA=="
+                       length="10723177"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 0.12.3</h2>
+                <ul>
+                    <li>Fix notarization issue that prevented DMG from opening on some Macs</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
             <title>Version 0.12.2</title>
             <sparkle:version>0.12.2</sparkle:version>
             <sparkle:shortVersionString>0.12.2</sparkle:shortVersionString>
