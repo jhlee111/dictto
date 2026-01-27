@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dictto - Real-time Voice to Text for Mac</title>
-    <meta name="description" content="Real-time voice-to-text that runs entirely on your Mac. 100% local, powered by Whisper.">
+    <title>Dictto — Speak freely. Your Mac transcribes.</title>
+    <meta name="description" content="Long-form voice-to-text that runs on your Mac. Speak for 5 minutes or 50. Custom dictionaries, LLM integration via MCP, speaker diarization. 100% local, powered by Whisper.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -487,6 +487,102 @@
             line-height: 1.6;
         }
 
+        /* MCP Section */
+        .mcp-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, transparent, rgba(123, 104, 238, 0.03), transparent);
+        }
+
+        .mcp-demo {
+            max-width: 640px;
+            margin: 0 auto 40px;
+        }
+
+        .mcp-conversation {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 15px;
+        }
+
+        .mcp-line {
+            display: flex;
+            gap: 12px;
+            align-items: baseline;
+        }
+
+        .mcp-role {
+            font-weight: 600;
+            font-size: 13px;
+            min-width: 60px;
+            flex-shrink: 0;
+        }
+
+        .mcp-whisper .mcp-role { color: var(--text-muted); }
+        .mcp-user .mcp-role { color: var(--primary); }
+        .mcp-llm .mcp-role { color: var(--secondary); }
+
+        .mcp-text {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .mcp-error {
+            color: #ff6b6b;
+            text-decoration: underline wavy #ff6b6b;
+            text-underline-offset: 3px;
+        }
+
+        .mcp-check {
+            color: #4ade80;
+            margin-right: 4px;
+        }
+
+        .mcp-result {
+            margin-top: 8px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            color: var(--text);
+            font-weight: 500;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .mcp-capabilities {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .mcp-cap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .mcp-cap-icon {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+            .mcp-conversation {
+                padding: 20px;
+            }
+            .mcp-capabilities {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+        }
+
         /* Perfect For Section */
         .perfect-for {
             padding: 80px 0;
@@ -724,10 +820,11 @@
         <span class="nav-logo">Dictto</span>
         <div class="nav-links">
             <a href="#features">Features</a>
+            <a href="#mcp">MCP</a>
             <a href="#use-cases">Use Cases</a>
             <a href="/pricing">Pricing</a>
         </div>
-        <a href="https://github.com/jhlee111/dictto/releases/download/v0.14.0/Dictto-0.14.0.dmg" class="nav-cta">Download</a>
+        <a href="https://github.com/jhlee111/dictto/releases/latest" class="nav-cta">Download</a>
     </nav>
 
     <div class="container">
@@ -738,7 +835,7 @@
             </div>
 
             <h1 class="logo fade-in delay-1">Dictto</h1>
-            <p class="tagline fade-in delay-2">Real-time voice-to-text for Mac</p>
+            <p class="tagline fade-in delay-2">Speak your thoughts. All of them.</p>
 
             <div class="waveform fade-in delay-2">
                 <div class="wave-bar" style="animation-delay: 0s;"></div>
@@ -757,9 +854,9 @@
             </div>
 
             <p class="hero-description fade-in delay-3">
-                Most dictation apps make you choose: <span class="highlight">fast</span> or <span class="highlight">private</span>.<br>
-                Dictto does both. Text appears while you speak, and nothing ever leaves your Mac.
-                <span class="hero-emphasis">Real-time streaming. 100% on-device.</span>
+                Other dictation apps give you 30 seconds.<br>
+                Dictto lets you speak for <span class="highlight">5 minutes or 50</span> — text streams as you talk,
+                ready the moment you stop. Nothing ever leaves your Mac.
             </p>
 
             <div class="video-container fade-in delay-4">
@@ -772,7 +869,7 @@
             </div>
 
             <div class="cta-group fade-in delay-4">
-                <a href="https://github.com/jhlee111/dictto/releases/download/v0.14.0/Dictto-0.14.0.dmg" class="download-btn">
+                <a href="https://github.com/jhlee111/dictto/releases/latest" class="download-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                     </svg>
@@ -792,48 +889,95 @@
             <div class="features-grid">
                 <div class="feature">
                     <div class="feature-icon">⚡</div>
-                    <h3>Real-time Streaming</h3>
-                    <p>See words appear as you speak, not after you stop. No waiting for transcription.</p>
+                    <h3>Long-form Dictation</h3>
+                    <p>Speak for 5 minutes or an hour. Text streams as you talk — your transcript is ready the moment you stop.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🔒</div>
                     <h3>100% Local</h3>
-                    <p>Everything runs on your Mac. Your voice never touches the cloud. Complete privacy.</p>
+                    <p>Everything runs on your Mac. Your voice never touches the cloud. Complete privacy, even offline.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>LLM Integration (MCP)</h3>
+                    <p>Connect Claude, ChatGPT, or any LLM. Review transcriptions, fix errors, manage dictionaries — all through natural conversation.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📖</div>
+                    <h3>Custom Dictionaries</h3>
+                    <p>Add names, companies, and domain terms so Whisper gets them right. Build dictionaries by just telling your LLM.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🎯</div>
                     <h3>Powered by Whisper</h3>
-                    <p>OpenAI's state-of-the-art speech recognition, running locally via WhisperKit.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">✈️</div>
-                    <h3>Works Offline</h3>
-                    <p>No internet required after model download. Perfect for travel or secure environments.</p>
+                    <p>OpenAI's state-of-the-art speech recognition, running locally via whisper.cpp on Apple Silicon.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">⌨️</div>
                     <h3>Global Hotkey</h3>
-                    <p>Press ⇧⌥D from any app to start recording. Text auto-pastes when you're done.</p>
+                    <p>Press ⇧⌥D from any app. Text auto-pastes into your cursor when you're done.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🌍</div>
                     <h3>Multilingual</h3>
-                    <p>English, Korean, Japanese, Chinese, and 90+ languages supported.</p>
+                    <p>English, Korean, Japanese, Chinese, and 90+ languages.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👥</div>
+                    <h3>Speaker Diarization (Beta)</h3>
+                    <p>Import audio files with multiple speakers. Dictto identifies and labels who said what.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🎙️</div>
                     <h3>Import Audio</h3>
-                    <p>Share from Voice Memos directly to Dictto, or import any audio file.</p>
+                    <p>Share from Voice Memos or import any audio/video file for transcription.</p>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">👥</div>
-                    <h3>Speaker Identification</h3>
-                    <p>Detect and name different speakers. Review and edit speaker names during transcription.</p>
+            </div>
+        </section>
+
+        <section class="mcp-section" id="mcp">
+            <div class="section-header">
+                <span class="section-label">LLM Integration</span>
+                <h2 class="section-title">Your LLM, your editor</h2>
+                <p class="section-subtitle">Connect any LLM via MCP to review and improve transcriptions through conversation.</p>
+            </div>
+
+            <div class="mcp-demo">
+                <div class="mcp-conversation">
+                    <div class="mcp-line mcp-whisper">
+                        <span class="mcp-role">Whisper</span>
+                        <span class="mcp-text">"Tom met <span class="mcp-error">Dian</span> at <span class="mcp-error">Bushon Bistro</span> last night"</span>
+                    </div>
+                    <div class="mcp-line mcp-user">
+                        <span class="mcp-role">You</span>
+                        <span class="mcp-text">"Add Diane to my contacts dictionary and fix Bouchon Bistro"</span>
+                    </div>
+                    <div class="mcp-line mcp-llm">
+                        <span class="mcp-role">LLM</span>
+                        <span class="mcp-text">
+                            <span class="mcp-check">&#10003;</span> Added "Diane" to Contacts dictionary<br>
+                            <span class="mcp-check">&#10003;</span> Added "Bouchon Bistro" to Places dictionary<br>
+                            <span class="mcp-check">&#10003;</span> Corrected transcription
+                        </span>
+                    </div>
+                    <div class="mcp-result">
+                        Next time Whisper gets it right automatically.
+                    </div>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">📖</div>
-                    <h3>User Dictionary</h3>
-                    <p>Add custom vocabulary for names, technical terms, or brand words.</p>
+            </div>
+
+            <div class="mcp-capabilities">
+                <div class="mcp-cap">
+                    <span class="mcp-cap-icon">&#10003;</span>
+                    <span>Review &amp; correct transcriptions</span>
+                </div>
+                <div class="mcp-cap">
+                    <span class="mcp-cap-icon">&#10003;</span>
+                    <span>Build custom dictionaries through conversation</span>
+                </div>
+                <div class="mcp-cap">
+                    <span class="mcp-cap-icon">&#10003;</span>
+                    <span>Manage speaker profiles for diarization</span>
                 </div>
             </div>
         </section>
@@ -850,7 +994,7 @@
                     <div class="use-case-icon">💻</div>
                     <div>
                         <h4>Developers</h4>
-                        <p>Vibe code with Claude, Cursor, or any LLM. Speak your prompts naturally.</p>
+                        <p>Dictate prompts, review transcriptions with your LLM, build custom dictionaries — all by voice.</p>
                     </div>
                 </div>
                 <div class="use-case">
@@ -925,13 +1069,13 @@
         </section>
 
         <section class="bottom-cta">
-            <h2>Ready to try?</h2>
+            <h2>Start speaking.</h2>
             <p>Free during beta. No account required.</p>
-            <a href="https://github.com/jhlee111/dictto/releases/download/v0.14.0/Dictto-0.14.0.dmg" class="download-btn">
+            <a href="https://github.com/jhlee111/dictto/releases/latest" class="download-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
-                Download Dictto
+                Download for Mac
             </a>
         </section>
     </div>
