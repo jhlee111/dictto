@@ -10,10 +10,10 @@
             <title>Version 0.14.0</title>
             <sparkle:version>0.14.0</sparkle:version>
             <sparkle:shortVersionString>0.14.0</sparkle:shortVersionString>
-            <pubDate>Mon, 26 Jan 2026 23:14:51 -0800</pubDate>
+            <pubDate>Tue, 27 Jan 2026 14:17:01 -0800</pubDate>
             <enclosure url="https://github.com/jhlee111/dictto/releases/download/v0.14.0/Dictto-0.14.0.zip"
-                       sparkle:edSignature="8Cll//6D2RfuLJ0vM5SHW3zEfY80gEtsd3G4/Stf0eqZGmGBbPRNoh7dv/Rf8EfrP6Eqq9ovPdwa2hW82OxRAg=="
-                       length="15993239"
+                       sparkle:edSignature="KiS3SBF9+//TcbIBTBjhFLXZ4bLo/aS6anLkpl+ibBGmhy83WE9WaMTL3Y1rhRdLuGRIw+E4X63mJJQ4f1ZtCA=="
+                       length="20122018"
                        type="application/octet-stream"/>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <description><![CDATA[
