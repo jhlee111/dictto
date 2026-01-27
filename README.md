@@ -4,7 +4,7 @@ Voice to text, locally - macOS menu bar app for private, offline voice dictation
 
 ## Download
 
-**[Download Dictto-0.12.1.dmg](https://github.com/jhlee111/dictto/releases/latest)**
+**[Download Dictto-0.14.0.dmg](https://github.com/jhlee111/dictto/releases/latest)**
 
 ## Features
 
@@ -19,6 +19,9 @@ Voice to text, locally - macOS menu bar app for private, offline voice dictation
 - **Speaker diarization** - Identify and label different speakers in audio files
 - **Speaker identification** - Assign names to speakers during transcription review
 - **Share Extension** - Share audio from Voice Memos directly to Dictto
+- **Guided setup** - First-launch walkthrough helps you get started quickly
+- **Instant feedback** - "Copied!" confirmation so you always know your transcription is ready
+- **Customizable shortcuts** - Set any key combination for recording, including Escape
 - **Automatic updates** - Get notified of new versions with in-app updates
 - **Long file support** - Progress display for files over 30 seconds
 
@@ -29,7 +32,7 @@ Voice to text, locally - macOS menu bar app for private, offline voice dictation
 
 ## Installation
 
-1. Download `Dictto-0.12.1.dmg` from [Releases](https://github.com/jhlee111/dictto/releases/latest)
+1. Download `Dictto-0.14.0.dmg` from [Releases](https://github.com/jhlee111/dictto/releases/latest)
 2. Open the DMG and drag Dictto to Applications
 3. Launch Dictto from Applications
 4. Grant Microphone permission when prompted
@@ -84,20 +87,10 @@ Voice to text, locally - macOS menu bar app for private, offline voice dictation
 - **Faster startup?** Use a smaller model (Tiny or Base) for quicker loading
 - **Long recordings?** Use "Import Audio..." for pre-recorded files with progress tracking
 
-## Website
-
-The `website/` directory contains the marketing website (dictto.com), deployed to Cloudflare Pages.
-
-```bash
-# Deploy website (requires wrangler CLI)
-./scripts/deploy-website.sh           # Production
-./scripts/deploy-website.sh --preview # Preview
-```
-
 ## License
 
 MIT License
 
 ## Version
 
-v0.12.1
+v0.14.0
