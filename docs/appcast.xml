@@ -7,6 +7,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 0.15.0</title>
+            <sparkle:version>0.15.0</sparkle:version>
+            <sparkle:shortVersionString>0.15.0</sparkle:shortVersionString>
+            <pubDate>Tue, 27 Jan 2026 20:48:28 -0800</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v0.15.0/Dictto-0.15.0.zip"
+                       sparkle:edSignature="LNrudJWqKvLtVolxBoj3vqzScpvQylewaVO8qRnAOu1puQJf08FNNtHsiuyTwgpf4tw125T79os3KnN5a7KiAg=="
+                       length="20117676"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 0.15.0</h2>
+                <ul>
+                    <li>MCP Server published to npm — connect Claude Code to Dictto for AI-assisted speaker review</li><li>New tentative speaker assignment for reviewing before confirming</li><li>MCP API Server toggle in Settings for easy on/off control</li><li>Simplified menu bar with cleaner layout</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
             <title>Version 0.14.0</title>
             <sparkle:version>0.14.0</sparkle:version>
             <sparkle:shortVersionString>0.14.0</sparkle:shortVersionString>
