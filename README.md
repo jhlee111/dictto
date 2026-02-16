@@ -43,10 +43,10 @@ Voice to text, locally — macOS menu bar app for private, offline voice dictati
 | | Community (Free) | Personal ($9.99) |
 |---|---|---|
 | Voice dictation | 1 minute per session | Unlimited |
-| File transcription | 3 minutes per file | Unlimited |
-| Custom dictionaries | 1 dictionary | Multiple dictionaries |
+| File transcription | 3 full-length/month, then 3-min cap | Unlimited |
+| Custom dictionaries | 1 dictionary, 5 entries | Multiple, unlimited entries |
+| SRT subtitle export | Included | Included |
 | MCP integration | — | Included |
-| SRT export | — | Included |
 
 One-time purchase. Activate on up to 3 devices.
 
