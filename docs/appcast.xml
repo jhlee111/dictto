@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Dictto Updates</title>
+        <link>https://jhlee111.github.io/dictto/appcast.xml</link>
+        <description>Most recent changes with links to updates.</description>
+        <language>en</language>
+
+        <item>
+            <title>Version 1.0.0</title>
+            <sparkle:version>1.0.0</sparkle:version>
+            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <pubDate>Sun, 15 Feb 2026 22:27:49 -0800</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v1.0.0/Dictto-1.0.0.zip"
+                       sparkle:edSignature="g7I+fKes05kWGmCI72+CsGeaGs0yLs24MK6p3ehV4B0r43xTtIitPtwa1IlZJ6kWARULy6rIR1pj9x50qtIdDg=="
+                       length="34392646"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 1.0.0</h2>
+                <ul>
+                    <li>Lemon Squeezy payment integration for Personal tier</li><li>Soft-stop recording UX with smooth animation</li><li>File transcription duration stats</li><li>SRT subtitle export for file transcription</li><li>Community tier 3-minute file transcription limit</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
+            <title>Version 0.15.0</title>
+            <sparkle:version>0.15.0</sparkle:version>
+            <sparkle:shortVersionString>0.15.0</sparkle:shortVersionString>
+            <pubDate>Tue, 27 Jan 2026 20:48:28 -0800</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v0.15.0/Dictto-0.15.0.zip"
+                       sparkle:edSignature="LNrudJWqKvLtVolxBoj3vqzScpvQylewaVO8qRnAOu1puQJf08FNNtHsiuyTwgpf4tw125T79os3KnN5a7KiAg=="
+                       length="20117676"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 0.15.0</h2>
+                <ul>
+                    <li>MCP Server published to npm — connect Claude Code to Dictto for AI-assisted speaker review</li><li>New tentative speaker assignment for reviewing before confirming</li><li>MCP API Server toggle in Settings for easy on/off control</li><li>Simplified menu bar with cleaner layout</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
+            <title>Version 0.14.0</title>
+            <sparkle:version>0.14.0</sparkle:version>
+            <sparkle:shortVersionString>0.14.0</sparkle:shortVersionString>
+            <pubDate>Tue, 27 Jan 2026 14:17:01 -0800</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v0.14.0/Dictto-0.14.0.zip"
+                       sparkle:edSignature="KiS3SBF9+//TcbIBTBjhFLXZ4bLo/aS6anLkpl+ibBGmhy83WE9WaMTL3Y1rhRdLuGRIw+E4X63mJJQ4f1ZtCA=="
+                       length="20122018"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 0.14.0</h2>
+                <ul>
+                    <li>Improved first-time setup experience with guided onboarding</li><li>New "Copied!" confirmation overlay after transcription</li><li>Export option to group consecutive segments from the same speaker</li><li>Customizable keyboard shortcuts now support all keys including Escape</li><li>Improved stability and bug fixes</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
+            <title>Version 0.12.3</title>
+            <sparkle:version>0.12.3</sparkle:version>
+            <sparkle:shortVersionString>0.12.3</sparkle:shortVersionString>
+            <pubDate>Sun, 18 Jan 2026 14:56:43 -0800</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v0.12.3/Dictto-0.12.3.zip"
+                       sparkle:edSignature="ryG6VFSG+O1GX3OhHNPn8AFwYCSW84CSPIkC1YfOrA/Mw0VfSmidvtM2OfscNsnptGvjRtQTJVnE4Waq2pGyAA=="
+                       length="10723177"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 0.12.3</h2>
+                <ul>
+                    <li>Fix notarization issue that prevented DMG from opening on some Macs</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
+            <title>Version 0.12.2</title>
+            <sparkle:version>0.12.2</sparkle:version>
+            <sparkle:shortVersionString>0.12.2</sparkle:shortVersionString>
+            <pubDate>Sat, 17 Jan 2026 13:03:31 -0800</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v0.12.2/Dictto-0.12.2.zip"
+                       sparkle:edSignature="kkTu6FJ+zHFmQL+7oAZ01nol4u3SgXFYNv51xPmntcmtTfQZYKaFK2mtmeHcEbMMwefzMXpq7Bk6/Rn26pYzBA=="
+                       length="10411559"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 0.12.2</h2>
+                <ul>
+                    <li>Automatic update check on app startup</li><li>Menu bar button to check for updates</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
+            <title>Version 0.12.1</title>
+            <sparkle:version>0.12.1</sparkle:version>
+            <sparkle:shortVersionString>0.12.1</sparkle:shortVersionString>
+            <pubDate>Sat, 17 Jan 2026 11:43:06 -0800</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v0.12.1/Dictto-0.12.1.zip"
+                       sparkle:edSignature="c7wRbwLO05fAczPQrMnsLTg+c+BvXvagSfNDDt2nLRaKplCSZaW3Wv+wMoKCpH8rfuNl4cSWxKE9hmZf0yiGCw=="
+                       length="10409986"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 0.12.1</h2>
+                <ul>
+                    <li>Fix auto-update version comparison</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
+            <title>Version 0.12.0</title>
+            <sparkle:version>0.12.0</sparkle:version>
+            <sparkle:shortVersionString>0.12.0</sparkle:shortVersionString>
+            <pubDate>Sat, 18 Jan 2026 04:20:00 +0900</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v0.12.0/Dictto-0.12.0.zip"
+                       sparkle:edSignature="DbCu13e5pLWXZJbtOIVKuLWhmtB2rswAS2bSyZqi6fwCZRSRATmLFcPE1c4gdLDujBm+RxDva7Y1DNv44pRDBw=="
+                       length="10410020"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What's New in 0.12.0</h2>
+                <ul>
+                    <li>Speaker identification with name assignment</li>
+                    <li>Diarization sensitivity adjustment</li>
+                    <li>Retry transcription without re-selecting file</li>
+                    <li>Automatic app updates via Sparkle</li>
+                </ul>
+            ]]></description>
+        </item>
+
+        <item>
+            <title>Version 0.11.0</title>
+            <sparkle:version>0.11.0</sparkle:version>
+            <sparkle:shortVersionString>0.11.0</sparkle:shortVersionString>
+            <pubDate>Fri, 17 Jan 2026 12:00:00 +0900</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v0.11.0/Dictto-0.11.0.zip"
+                       sparkle:edSignature="PLACEHOLDER_SIGNATURE"
+                       length="0"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What's New in 0.11.0</h2>
+                <ul>
+                    <li>Speaker identification UX improvements</li>
+                    <li>Diarization threshold adjustment</li>
+                    <li>Retry functionality for file import</li>
+                    <li>Automatic updates via Sparkle</li>
+                </ul>
+            ]]></description>
+        </item>
+
+    </channel>
+</rss>
