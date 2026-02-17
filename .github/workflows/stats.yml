@@ -16,7 +16,7 @@ jobs:
 
       - name: Collect stats
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.STATS_PAT || secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           REPO="jhlee111/dictto"
@@ -34,9 +34,13 @@ jobs:
           # --- Stars ---
           STARS=$(gh api "repos/$REPO" --jq '.stargazers_count')
 
-          # --- Traffic (14-day window) ---
-          VIEWS_JSON=$(gh api "repos/$REPO/traffic/views" --jq '.views')
-          CLONES_JSON=$(gh api "repos/$REPO/traffic/clones" --jq '.clones')
+          # --- Traffic (14-day window, requires PAT with repo scope) ---
+          VIEWS_JSON=$(gh api "repos/$REPO/traffic/views" --jq '.views' 2>/dev/null || echo '[]')
+          CLONES_JSON=$(gh api "repos/$REPO/traffic/clones" --jq '.clones' 2>/dev/null || echo '[]')
+
+          if [ "$VIEWS_JSON" = "[]" ] && [ "$CLONES_JSON" = "[]" ]; then
+            echo "::warning::Traffic API returned no data. Add STATS_PAT secret with repo scope for traffic stats."
+          fi
 
           # --- Load or init existing data ---
           if [ -f "$FILE" ]; then
