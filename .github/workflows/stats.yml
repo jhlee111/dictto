@@ -34,9 +34,11 @@ jobs:
           # --- Stars ---
           STARS=$(gh api "repos/$REPO" --jq '.stargazers_count')
 
-          # --- Traffic (14-day window, requires PAT with repo scope) ---
-          VIEWS_JSON=$(gh api "repos/$REPO/traffic/views" --jq '.views' 2>/dev/null || echo '[]')
-          CLONES_JSON=$(gh api "repos/$REPO/traffic/clones" --jq '.clones' 2>/dev/null || echo '[]')
+          # --- Traffic (requires PAT with repo scope, gracefully falls back to empty) ---
+          VIEWS_RAW=$(gh api "repos/$REPO/traffic/views" 2>/dev/null || true)
+          CLONES_RAW=$(gh api "repos/$REPO/traffic/clones" 2>/dev/null || true)
+          VIEWS_JSON=$(echo "$VIEWS_RAW" | jq '.views // []' 2>/dev/null || echo '[]')
+          CLONES_JSON=$(echo "$CLONES_RAW" | jq '.clones // []' 2>/dev/null || echo '[]')
 
           if [ "$VIEWS_JSON" = "[]" ] && [ "$CLONES_JSON" = "[]" ]; then
             echo "::warning::Traffic API returned no data. Add STATS_PAT secret with repo scope for traffic stats."
@@ -90,7 +92,6 @@ jobs:
                       clones: $c, clones_unique: $cu, stars: null}]')
           done
 
-          # Also check clone-only days not in views
           for ROW in $(echo "$CLONES_JSON" | jq -r '.[] | @base64'); do
             D=$(echo "$ROW" | base64 -d | jq -r '.timestamp' | cut -c1-10)
             [ "$D" = "$TODAY" ] && continue
