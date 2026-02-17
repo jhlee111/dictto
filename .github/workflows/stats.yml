@@ -1,0 +1,130 @@
+name: Collect Stats
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # 06:00 UTC = 15:00 KST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Collect stats
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          REPO="jhlee111/dictto"
+          TODAY=$(date -u +%Y-%m-%d)
+          FILE="data/stats.json"
+          mkdir -p data
+
+          # --- Release downloads (cumulative) ---
+          RELEASES=$(gh api "repos/$REPO/releases" --paginate --jq '
+            [.[] | .assets[] | {name: .name, count: .download_count}]
+          ')
+          DMG=$(echo "$RELEASES" | jq '[.[] | select(.name | endswith(".dmg")) | .count] | add // 0')
+          ZIP=$(echo "$RELEASES" | jq '[.[] | select(.name | endswith(".zip")) | .count] | add // 0')
+
+          # --- Stars ---
+          STARS=$(gh api "repos/$REPO" --jq '.stargazers_count')
+
+          # --- Traffic (14-day window) ---
+          VIEWS_JSON=$(gh api "repos/$REPO/traffic/views" --jq '.views')
+          CLONES_JSON=$(gh api "repos/$REPO/traffic/clones" --jq '.clones')
+
+          # --- Load or init existing data ---
+          if [ -f "$FILE" ]; then
+            EXISTING=$(cat "$FILE")
+          else
+            EXISTING="[]"
+          fi
+
+          # --- Build today's record ---
+          TODAY_VIEWS=$(echo "$VIEWS_JSON" | jq --arg d "$TODAY" '[.[] | select(.timestamp | startswith($d))] | .[0] // empty')
+          TODAY_CLONES=$(echo "$CLONES_JSON" | jq --arg d "$TODAY" '[.[] | select(.timestamp | startswith($d))] | .[0] // empty')
+
+          V_COUNT=$(echo "$TODAY_VIEWS" | jq '.count // 0')
+          V_UNIQ=$(echo "$TODAY_VIEWS" | jq '.uniques // 0')
+          C_COUNT=$(echo "$TODAY_CLONES" | jq '.count // 0')
+          C_UNIQ=$(echo "$TODAY_CLONES" | jq '.uniques // 0')
+
+          TODAY_RECORD=$(jq -n \
+            --arg date "$TODAY" \
+            --argjson dmg "$DMG" \
+            --argjson zip "$ZIP" \
+            --argjson views "$V_COUNT" \
+            --argjson views_unique "$V_UNIQ" \
+            --argjson clones "$C_COUNT" \
+            --argjson clones_unique "$C_UNIQ" \
+            --argjson stars "$STARS" \
+            '{date: $date, downloads_dmg: $dmg, downloads_zip: $zip,
+              views: $views, views_unique: $views_unique,
+              clones: $clones, clones_unique: $clones_unique, stars: $stars}')
+
+          # --- Backfill traffic-only days not already in data ---
+          BACKFILL="[]"
+          EXISTING_DATES=$(echo "$EXISTING" | jq -r '.[].date')
+
+          for ROW in $(echo "$VIEWS_JSON" | jq -r '.[] | @base64'); do
+            D=$(echo "$ROW" | base64 -d | jq -r '.timestamp' | cut -c1-10)
+            if [ "$D" = "$TODAY" ]; then continue; fi
+            if echo "$EXISTING_DATES" | grep -qF "$D"; then continue; fi
+
+            BV=$(echo "$ROW" | base64 -d | jq '.count')
+            BVU=$(echo "$ROW" | base64 -d | jq '.uniques')
+
+            # Find matching clone data
+            BC=$(echo "$CLONES_JSON" | jq --arg d "$D" '[.[] | select(.timestamp | startswith($d))] | .[0].count // 0')
+            BCU=$(echo "$CLONES_JSON" | jq --arg d "$D" '[.[] | select(.timestamp | startswith($d))] | .[0].uniques // 0')
+
+            BACKFILL=$(echo "$BACKFILL" | jq --arg d "$D" \
+              --argjson v "$BV" --argjson vu "$BVU" \
+              --argjson c "$BC" --argjson cu "$BCU" \
+              '. + [{date: $d, downloads_dmg: null, downloads_zip: null,
+                      views: $v, views_unique: $vu,
+                      clones: $c, clones_unique: $cu, stars: null}]')
+          done
+
+          # Also check clone-only days not in views
+          for ROW in $(echo "$CLONES_JSON" | jq -r '.[] | @base64'); do
+            D=$(echo "$ROW" | base64 -d | jq -r '.timestamp' | cut -c1-10)
+            if [ "$D" = "$TODAY" ]; then continue; fi
+            if echo "$EXISTING_DATES" | grep -qF "$D"; then continue; fi
+            # Skip if already in backfill
+            if echo "$BACKFILL" | jq -e --arg d "$D" '.[] | select(.date == $d)' > /dev/null 2>&1; then continue; fi
+
+            BC=$(echo "$ROW" | base64 -d | jq '.count')
+            BCU=$(echo "$ROW" | base64 -d | jq '.uniques')
+
+            BACKFILL=$(echo "$BACKFILL" | jq --arg d "$D" \
+              --argjson c "$BC" --argjson cu "$BCU" \
+              '. + [{date: $d, downloads_dmg: null, downloads_zip: null,
+                      views: 0, views_unique: 0,
+                      clones: $c, clones_unique: $cu, stars: null}]')
+          done
+
+          # --- Merge: remove today if exists, add backfill + today, sort by date ---
+          MERGED=$(echo "$EXISTING" | jq --arg d "$TODAY" '[.[] | select(.date != $d)]')
+          MERGED=$(echo "$MERGED" "$BACKFILL" | jq -s '.[0] + .[1]')
+          MERGED=$(echo "$MERGED" | jq --argjson rec "$TODAY_RECORD" '. + [$rec] | sort_by(.date)')
+
+          echo "$MERGED" | jq '.' > "$FILE"
+
+          echo "Collected stats for $TODAY: DMG=$DMG ZIP=$ZIP Views=$V_COUNT Clones=$C_COUNT Stars=$STARS"
+          echo "Backfilled $(echo "$BACKFILL" | jq 'length') days"
+          echo "Total records: $(echo "$MERGED" | jq 'length')"
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/stats.json
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "stats: $(date -u +%Y-%m-%d)"
+          git push
