@@ -7,6 +7,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.1.0</title>
+            <sparkle:version>1.1.0</sparkle:version>
+            <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+            <pubDate>Wed, 18 Feb 2026 13:48:54 -0700</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v1.1.0/Dictto-1.1.0.zip"
+                       sparkle:edSignature="5ugdPfZ6nF0wFpV/c4ot6Pl+JB7CtBmB/YmpLrQXgx9V1vAQxlh6UVK23uzOU25bOILSnwaviBHyHZaYb1P4DA=="
+                       length="34392516"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 1.1.0</h2>
+                <ul>
+                    <li>Community tier: dictation limit changed to 45 seconds (3 daily sessions)</li><li>Stats tracking dashboard</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
             <title>Version 1.0.0</title>
             <sparkle:version>1.0.0</sparkle:version>
             <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
