@@ -1,5 +1,135 @@
 [
   {
+    "date": "2026-02-04",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 0,
+    "views_unique": 0,
+    "clones": 1,
+    "clones_unique": 1,
+    "stars": null
+  },
+  {
+    "date": "2026-02-05",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 1,
+    "views_unique": 1,
+    "clones": 1,
+    "clones_unique": 1,
+    "stars": null
+  },
+  {
+    "date": "2026-02-06",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 0,
+    "views_unique": 0,
+    "clones": 0,
+    "clones_unique": 0,
+    "stars": null
+  },
+  {
+    "date": "2026-02-07",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 0,
+    "views_unique": 0,
+    "clones": 0,
+    "clones_unique": 0,
+    "stars": null
+  },
+  {
+    "date": "2026-02-08",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 2,
+    "views_unique": 2,
+    "clones": 1,
+    "clones_unique": 1,
+    "stars": null
+  },
+  {
+    "date": "2026-02-09",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 1,
+    "views_unique": 1,
+    "clones": 0,
+    "clones_unique": 0,
+    "stars": null
+  },
+  {
+    "date": "2026-02-10",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 0,
+    "views_unique": 0,
+    "clones": 1,
+    "clones_unique": 1,
+    "stars": null
+  },
+  {
+    "date": "2026-02-11",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 0,
+    "views_unique": 0,
+    "clones": 0,
+    "clones_unique": 0,
+    "stars": null
+  },
+  {
+    "date": "2026-02-12",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 7,
+    "views_unique": 1,
+    "clones": 0,
+    "clones_unique": 0,
+    "stars": null
+  },
+  {
+    "date": "2026-02-13",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 10,
+    "views_unique": 3,
+    "clones": 0,
+    "clones_unique": 0,
+    "stars": null
+  },
+  {
+    "date": "2026-02-14",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 1,
+    "views_unique": 1,
+    "clones": 0,
+    "clones_unique": 0,
+    "stars": null
+  },
+  {
+    "date": "2026-02-15",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 1,
+    "views_unique": 1,
+    "clones": 1,
+    "clones_unique": 1,
+    "stars": null
+  },
+  {
+    "date": "2026-02-16",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 12,
+    "views_unique": 2,
+    "clones": 102,
+    "clones_unique": 35,
+    "stars": null
+  },
+  {
     "date": "2026-02-17",
     "downloads_dmg": 1,
     "downloads_zip": 1,
@@ -11,8 +141,8 @@
   },
   {
     "date": "2026-02-18",
-    "downloads_dmg": 1,
-    "downloads_zip": 1,
+    "downloads_dmg": 0,
+    "downloads_zip": 0,
     "views": 0,
     "views_unique": 0,
     "clones": 0,
