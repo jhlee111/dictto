@@ -42,7 +42,7 @@ Voice to text, locally — macOS menu bar app for private, offline voice dictati
 
 | | Community (Free) | Personal ($9.99) |
 |---|---|---|
-| Voice dictation | 1 minute per session | Unlimited |
+| Voice dictation | 45 seconds per session, 3 daily | Unlimited |
 | File transcription | 3 full-length/month, then 3-min cap | Unlimited |
 | Custom dictionaries | 1 dictionary, 5 entries | Multiple, unlimited entries |
 | SRT subtitle export | Included | Included |
