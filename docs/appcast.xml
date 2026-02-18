@@ -7,6 +7,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.2.0</title>
+            <sparkle:version>1.2.0</sparkle:version>
+            <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
+            <pubDate>Wed, 18 Feb 2026 16:54:27 -0700</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v1.2.0/Dictto-1.2.0.zip"
+                       sparkle:edSignature="1qESqqlY8PchZ8B/7eSgpX2bg8bW/rwFGBewfWa8qcODE+U9C2zETi9DKpKywAZshI/Y97doYyFWPpevx3jBDw=="
+                       length="34415354"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 1.2.0</h2>
+                <ul>
+                    <li>Audio input device selection — choose your microphone from the menu bar</li><li>Fix: Community 45-second recording limit now works correctly every time</li><li>Improved upgrade prompt messaging</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
             <title>Version 1.1.0</title>
             <sparkle:version>1.1.0</sparkle:version>
             <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>

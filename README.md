@@ -4,7 +4,7 @@ Voice to text, locally — macOS menu bar app for private, offline voice dictati
 
 ## Download
 
-**[Download Dictto-1.0.0.dmg](https://github.com/jhlee111/dictto/releases/latest)**
+**[Download Dictto.dmg](https://github.com/jhlee111/dictto/releases/latest)**
 
 ## Features
 
@@ -17,6 +17,7 @@ Voice to text, locally — macOS menu bar app for private, offline voice dictati
 - **Clipboard fallback** — Always copies to clipboard
 - **Custom dictionaries** — Add specialized vocabulary for better accuracy
 - **Sound feedback** — Audio cues for recording start/stop
+- **Input device selection** — Choose your microphone from the menu bar or Settings
 
 ### Voice Agent Mode
 - **Talk to Claude Code** — Press `Shift+Option+S` to speak directly to Claude Code
@@ -42,7 +43,7 @@ Voice to text, locally — macOS menu bar app for private, offline voice dictati
 
 | | Community (Free) | Personal ($9.99) |
 |---|---|---|
-| Voice dictation | 45 seconds per session, 3 daily | Unlimited |
+| Voice dictation | 45 seconds per session | Unlimited |
 | File transcription | 3 full-length/month, then 3-min cap | Unlimited |
 | Custom dictionaries | 1 dictionary, 5 entries | Multiple, unlimited entries |
 | SRT subtitle export | Included | Included |
@@ -66,7 +67,7 @@ brew install --cask dictto
 
 ### Manual
 
-1. Download `Dictto-1.0.0.dmg` from [Releases](https://github.com/jhlee111/dictto/releases/latest)
+1. Download `Dictto.dmg` from [Releases](https://github.com/jhlee111/dictto/releases/latest)
 2. Open the DMG and drag Dictto to Applications
 3. Launch Dictto from Applications
 4. Grant Microphone permission when prompted
@@ -132,4 +133,4 @@ brew install --cask dictto
 
 ## Version
 
-v1.0.0
+v1.2.0
