@@ -7,6 +7,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.3.0</title>
+            <sparkle:version>1.3.0</sparkle:version>
+            <sparkle:shortVersionString>1.3.0</sparkle:shortVersionString>
+            <pubDate>Thu, 19 Feb 2026 13:01:16 -0700</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v1.3.0/Dictto-1.3.0.zip"
+                       sparkle:edSignature="z5G0OkUr250MEG+U0cuUeTSDh7/OWuP8+btVPhcFW7xOAjf1qfwCT7t4Z1O9CDJiPL/umZmewWxRwAEz3OR0DA=="
+                       length="34533952"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 1.3.0</h2>
+                <ul>
+                    <li>Capture audio from any app (Chrome, Safari, etc.) and transcribe in real-time</li><li>Paragraph-separated transcription results</li><li>SRT subtitle export with time offset correction</li><li>Audio input device selection</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
             <title>Version 1.2.0</title>
             <sparkle:version>1.2.0</sparkle:version>
             <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>

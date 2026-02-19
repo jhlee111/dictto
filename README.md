@@ -30,6 +30,12 @@ Voice to text, locally — macOS menu bar app for private, offline voice dictati
 - **Share Extension** — Share audio from Voice Memos directly to Dictto
 - **Progress display** — Real-time progress for longer files
 
+### Audio Capture
+- **Capture from any app** — Transcribe audio playing in Chrome, Safari, or any app in real-time
+- **Live transcription** — See text appear as audio plays
+- **SRT output** — View transcription as subtitles with timestamps
+- **Time offset correction** — Align timestamps to the original video position
+
 ### Claude Code Integration
 - **MCP integration** — Connect Claude Code via [dictto-mcp](https://www.npmjs.com/package/dictto-mcp)
 - **Custom dictionaries** — Build vocabulary through natural conversation
@@ -44,7 +50,7 @@ Voice to text, locally — macOS menu bar app for private, offline voice dictati
 | | Community (Free) | Personal ($9.99) |
 |---|---|---|
 | Voice dictation | 45 seconds per session | Unlimited |
-| File transcription | 3 full-length/month, then 3-min cap | Unlimited |
+| File transcription & audio capture | 3 full-length/month, then 3-min cap | Unlimited |
 | Custom dictionaries | 1 dictionary, 5 entries | Multiple, unlimited entries |
 | SRT subtitle export | Included | Included |
 | MCP integration | — | Included |
@@ -99,6 +105,14 @@ brew install --cask dictto
 4. Click "Transcribe"
 5. Copy the result or export as SRT
 
+### Audio Capture
+1. Click menu bar icon → "Capture audio"
+2. Select the app to capture (e.g., Chrome, Safari)
+3. Grant Screen Recording permission if prompted
+4. Audio is transcribed in real-time as it plays
+5. Click Stop to finalize — switch between Text and SRT views
+6. Optionally enter a time offset to align SRT timestamps to the video
+
 ### Share from Voice Memos
 1. Open Voice Memos app
 2. Right-click a recording → Share → "Transcribe with Dictto"
@@ -122,6 +136,7 @@ brew install --cask dictto
 |------------|----------|---------|
 | Microphone | Yes | Record voice |
 | Accessibility | Optional | Insert text directly into active field |
+| Screen Recording | Optional | Capture audio from other apps |
 
 ## Keyboard Shortcuts
 
@@ -133,4 +148,4 @@ brew install --cask dictto
 
 ## Version
 
-v1.2.0
+v1.3.0
