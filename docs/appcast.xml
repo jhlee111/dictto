@@ -7,6 +7,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.3.1</title>
+            <sparkle:version>1.3.1</sparkle:version>
+            <sparkle:shortVersionString>1.3.1</sparkle:shortVersionString>
+            <pubDate>Sat, 21 Feb 2026 10:28:52 -0800</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v1.3.1/Dictto-1.3.1.zip"
+                       sparkle:edSignature="X6jJrd9/kB9yd81mQ2DjL/fd9tC5pOjDDFWq8wb8xsCVKAVteD4J3BuVDYhdD1XrWFGSmNzjlR8LATK6dYvBBQ=="
+                       length="34541130"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 1.3.1</h2>
+                <ul>
+                    <li>Fixed empty recording when Bluetooth disconnects or system audio device changes</li><li>Improved license key validation and security</li><li>Added expiration date display for time-limited licenses</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
             <title>Version 1.3.0</title>
             <sparkle:version>1.3.0</sparkle:version>
             <sparkle:shortVersionString>1.3.0</sparkle:shortVersionString>
