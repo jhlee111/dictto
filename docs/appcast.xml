@@ -7,6 +7,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.3.2</title>
+            <sparkle:version>1.3.2</sparkle:version>
+            <sparkle:shortVersionString>1.3.2</sparkle:shortVersionString>
+            <pubDate>Fri, 27 Feb 2026 16:40:20 -0800</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v1.3.2/Dictto-1.3.2.zip"
+                       sparkle:edSignature="JqTM/zam30q5HEEGRZR9QiMsbkimmzsDPoCoFvZJtcYg7Q3yY6njmXgyBtaMPckHsqZmZGUgjUR2wfMh+GtoBg=="
+                       length="34552312"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 1.3.2</h2>
+                <ul>
+                    <li>Fixed Agent Mode leaving orphan processes after cancel (memory leak)</li><li>Audio engine stall detection and auto-restart</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
             <title>Version 1.3.1</title>
             <sparkle:version>1.3.1</sparkle:version>
             <sparkle:shortVersionString>1.3.1</sparkle:shortVersionString>
