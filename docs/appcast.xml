@@ -7,6 +7,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.3.3</title>
+            <sparkle:version>1.3.3</sparkle:version>
+            <sparkle:shortVersionString>1.3.3</sparkle:shortVersionString>
+            <pubDate>Fri, 27 Feb 2026 17:08:44 -0800</pubDate>
+            <enclosure url="https://github.com/jhlee111/dictto/releases/download/v1.3.3/Dictto-1.3.3.zip"
+                       sparkle:edSignature="bTVmx12iVeJ/kUXoZbEQGYNc918L2QZdDVH2NdorDtIHDCaCeAS34XtDexkLM8Reb5Wllvu4Kt1+9lafrXjQAQ=="
+                       length="34552139"
+                       type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>What&#39;s New in 1.3.3</h2>
+                <ul>
+                    <li>Fixed license verification not running automatically, causing licenses to silently expire after 7 days</li><li>License keys are now preserved for automatic recovery — no need to re-enter your key</li><li>Extended offline grace period from 7 to 30 days</li>
+                </ul>
+            ]]></description>
+        </item>
+
+
+        <item>
             <title>Version 1.3.2</title>
             <sparkle:version>1.3.2</sparkle:version>
             <sparkle:shortVersionString>1.3.2</sparkle:shortVersionString>
