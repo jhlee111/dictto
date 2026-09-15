@@ -2210,7 +2210,27 @@
     "stars": 0
   },
   {
+    "date": "2026-09-13",
+    "downloads_dmg": null,
+    "downloads_zip": null,
+    "views": 0,
+    "views_unique": 0,
+    "clones": 5,
+    "clones_unique": 5,
+    "stars": null
+  },
+  {
     "date": "2026-09-14",
+    "downloads_dmg": 34,
+    "downloads_zip": 14,
+    "views": 0,
+    "views_unique": 0,
+    "clones": 0,
+    "clones_unique": 0,
+    "stars": 0
+  },
+  {
+    "date": "2026-09-15",
     "downloads_dmg": 34,
     "downloads_zip": 14,
     "views": 0,
